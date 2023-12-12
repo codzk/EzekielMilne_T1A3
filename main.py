@@ -21,7 +21,12 @@ while True:
     if option == "1":
         create_profile(file_name)
     elif option == "2":
-        log_in()
+        logged_in_user = log_in(file_name)
+        if logged_in_user:
+            print("1. Calculate Calories")
+            print("2. Log")
+            print("3. Exit")
+            
     elif option == "3":
         print("Thank you for using our Calorie Calculator!")
         break
