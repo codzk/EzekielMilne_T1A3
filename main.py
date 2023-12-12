@@ -1,18 +1,38 @@
+from app_functions import create_profile, log_in
+
+
 # introduction/title (Calorie Calculator)
+print("Welcome to our Calorie Calculator. Your guide for your daily calorie needs.")
 
-# user 1.create profile, 2. log in and 3.exit 
-'''
-1. create profile (Username: , Password:  )
-2. log in
-3. exit 
-'''
-# Create Profile
-# Log in 
-'''hello message to user (Welcome! Username! What can I help?)
-1. Calculate Calories
-2. History Log
-3. Exit 
-'''
+# menu 1.create profile, 2. log in and 3.exit 
+def generate_menu():
+    print("1. Create Profile")
+    print("2. Log In")
+    print("3. Exit")
+    option = input ("Please Select a Number from the Options Provided: ")
+    return option
 
-# Calculate Calories 
+
+while True:
+    option = generate_menu()
+
+    if option == "1":
+        create_profile()
+    elif option == "2":
+        log_in()
+    elif option == "3":
+        print("Thank you for using our Calorie Calculator!")
+        break
+    else:
+        print("The option you have chosen is invalid. Please select a valid option.")
+
+
+
+
+
+    
+
+
+
+
 
