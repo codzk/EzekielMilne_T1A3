@@ -30,10 +30,17 @@ while not logged_in: # loop until logged_in is True
             print("1. Calculate Calories")
             print("2. Log")
             print("3. Exit")
-            
     elif option == "3":
         print("Thank you for using our Calorie Calculator!")
         break
+    elif logged_in:
+        if option == "1":
+            calculate_calories()
+        elif option == "2":
+            print("for log/history")
+        elif option == "3":
+            print("Exiting the Calorie Calculator.")
+            break
     else:
         print("The option you have chosen is invalid. Please select a valid option.")
 
