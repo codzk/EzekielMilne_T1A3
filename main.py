@@ -1,11 +1,11 @@
-from app_functions import create_profile, log_in
+from app_functions import create_profile, log_in, calculate_calories
 
 file_name = "user_data.csv"
 logged_in = False
 
 
 # introduction/title (Calorie Calculator)
-print("Welcome to our Calorie Calculator. Your guide for your daily calorie needs.")
+print("Welcome to our Calorie and BMI Calculator. Your guide for your daily calorie needs.")
 
 # menu 1.create profile, 2. log in and 3.exit 
 def generate_menu():
@@ -28,8 +28,9 @@ while not logged_in: # loop until logged_in is True
             # options after successful login
             print("Welcome!How can I help?")
             print("1. Calculate Calories")
-            print("2. Log")
-            print("3. Exit")
+            print("2. Calculate BMI")
+            print("3. Log")
+            print("4. Exit")
     elif option == "3":
         print("Thank you for using our Calorie Calculator!")
         break
@@ -37,8 +38,10 @@ while not logged_in: # loop until logged_in is True
         if option == "1":
             calculate_calories()
         elif option == "2":
-            print("for log/history")
+            print("for bmi")
         elif option == "3":
+            print("for log/history")
+        elif option == "4":
             print("Exiting the Calorie Calculator.")
             break
     else:
