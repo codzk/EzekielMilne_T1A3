@@ -1,5 +1,7 @@
 from app_functions import create_profile, log_in
 
+file_name = "user_data.csv"
+
 
 # introduction/title (Calorie Calculator)
 print("Welcome to our Calorie Calculator. Your guide for your daily calorie needs.")
@@ -17,7 +19,7 @@ while True:
     option = generate_menu()
 
     if option == "1":
-        create_profile()
+        create_profile(file_name)
     elif option == "2":
         log_in()
     elif option == "3":
