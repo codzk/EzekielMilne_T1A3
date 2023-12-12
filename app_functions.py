@@ -63,7 +63,7 @@ def calculate_calories():
     # Harris-Benedict equation for estimating Basal Metabolic Rate (BMR)
     # BMR calculation depends on gender (1.2 for females, 1.55 for males)
 
-    gender = input("Enter your gender (M/F) in upper case: ").upper
+    gender = input("Enter your gender (M/F) in upper case: ").upper()
 
     if gender == "M":
         bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age)
@@ -79,3 +79,11 @@ def calculate_calories():
     total_calories = round(bmr * activity_multiplier)
 
     print(f"\nYour estimated daily calorie needs: {total_calories} calories.")
+    # Ask the user if they want to go back to the main menu
+    choice = input("\nDo you want to go back to the main menu? (yes/no): ").lower()
+    if choice == 'yes':
+        return True
+    elif choice == 'no':
+        return False
+    else:
+            print("Invalid choice. Please enter 'yes' or 'no'.")
