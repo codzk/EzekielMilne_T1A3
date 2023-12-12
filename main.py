@@ -1,6 +1,7 @@
 from app_functions import create_profile, log_in
 
 file_name = "user_data.csv"
+logged_in = False
 
 
 # introduction/title (Calorie Calculator)
@@ -15,7 +16,7 @@ def generate_menu():
     return option
 
 
-while True:
+while not logged_in: # loop until logged_in is True
     option = generate_menu()
 
     if option == "1":
@@ -23,6 +24,9 @@ while True:
     elif option == "2":
         logged_in_user = log_in(file_name)
         if logged_in_user:
+            logged_in = True # set to True if login is successful 
+            # options after successful login
+            print("Welcome!How can I help?")
             print("1. Calculate Calories")
             print("2. Log")
             print("3. Exit")
