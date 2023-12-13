@@ -41,7 +41,7 @@ def log_in(file_name):
         print("Login Successful.")
         return{"username": username, "password": password}
     else:
-        print("Invalid Username or Password. Please try again.")
+        print("\nInvalid Username or Password. Please try again.")
         return None
     
 def calculate_calories():
@@ -79,11 +79,35 @@ def calculate_calories():
     total_calories = round(bmr * activity_multiplier)
 
     print(f"\nYour estimated daily calorie needs: {total_calories} calories.")
-    # Ask the user if they want to go back to the main menu
-    choice = input("\nDo you want to go back to the main menu? (yes/no): ").lower()
-    if choice == 'yes':
-        return True
-    elif choice == 'no':
-        return False
+    return input("\nDo you want to go back to the sub menu? (yes/no): ").lower() == 'yes'
+    # goes back to sub_option
+
+def calculate_bmi():
+    print("Calculate BMI")
+
+    # user input for weight and height
+    weight = float(input("Enter your weight in kilograms: "))
+    height_cm = float(input("Enter your height in centimeters: "))
+
+    #convert height to metres
+    height_m = height_cm / 100
+
+    # BMI calculation
+    bmi = weight / (height_m ** 2)
+
+    print (f"\nYour BMI is: {bmi:.2f}")
+
+    # BMI categories
+    if bmi < 18.5:
+        category = "Underweight"
+    elif 18.5 <= bmi < 24.9:
+        category = "Normal weight"
+    elif 25 <= bmi < 29.9:
+        category = "Overweight"
     else:
-            print("Invalid choice. Please enter 'yes' or 'no'.")
+        category = "Obese"
+    print(f"Your BMI category is: {category}")
+    return input("\nDo you want to go back to the sub menu? (yes/no): ").lower() == 'yes'
+    #goes back to sub_option
+
+
