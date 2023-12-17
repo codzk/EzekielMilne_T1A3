@@ -5,21 +5,30 @@ def get_user_input(prompt):
 
 def create_profile(file_name):
     print("Create Profile")
-    username = get_user_input("Enter your username: ")
-    password = get_user_input("Enter your password: ")
+    try:
+        username = get_user_input("Enter your username: ")
+        if not username:
+            raise ValueError("Username cannot be empty")
+        password = get_user_input("Enter your password: ")
 
-    with open(file_name, "a") as f:
-        writer = csv.writer(f)
-        writer.writerow([username, password])
+        with open(file_name, "a") as f:
+            writer = csv.writer(f)
+            writer.writerow([username, password])
 
-    print(f"Profile for {username} created successfully")
+        print(f"Profile for {username} created successfully")
+    except Exception as e:
+        print(f"An error occurred: {e}")
 
 def load_user_data(file_name):
     user_data = []
-    with open(file_name, "r") as r:
-        reader = csv.reader(r)
-        for row in reader:
-            user_data.append({"username": row[0], "password": row[1]})
+    try:
+        with open(file_name, "r") as r:
+            reader = csv.reader(r)
+            for row in reader:
+                user_data.append({"username": row[0], "password": row[1]})
+    except Exception as e:
+        print(f"An error occurred while loading user data: {e}")
+
     return user_data
 
 def login_valid(username, password, user_data):
@@ -30,18 +39,22 @@ def login_valid(username, password, user_data):
 
 def log_in(file_name):
     print("Log In")
+    try:
+        user_data = load_user_data(file_name)
 
-    user_data = load_user_data(file_name)
+        username = get_user_input("Enter your username: ")
+        password = get_user_input("Enter your password: ")
 
-    username = get_user_input("Enter your username: ")
-    password = get_user_input("Enter your password: ")
-
-    if login_valid(username, password, user_data):
-        print("Login Successful.")
-        return {"username": username, "password": password}
-    else:
-        print("\nInvalid Username or Password. Please try again.")
+        if login_valid(username, password, user_data):
+            print("Login Successful.")
+            return {"username": username, "password": password}
+        else:
+            print("\nInvalid Username or Password. Please try again.")
+            return None
+    except Exception as e:
+        print(f"An error occurred: {e}")
         return None
+
 
 def calculate_calories():
     print("Calculate Calories")

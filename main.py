@@ -25,11 +25,17 @@ while True:
                 print("3. Exit")
                 sub_option = input("\nEnter your choice: ")
                 if sub_option == "1":
-                    if not calculate_calories():
-                        logged_in = False
+                    try:
+                        if not calculate_calories():
+                            logged_in = False
+                    except Exception as e:
+                        print(f"An error occurred: {e}")
                 elif sub_option == "2":
-                    if not calculate_bmi():
-                        logged_in = False
+                    try:
+                        if not calculate_bmi():
+                            logged_in = False
+                    except Exception as e:
+                        print(f"An error occurred: {e}")
                 elif sub_option == "3":
                     print("Exiting the Calorie Calculator.")
                     logged_in = False
@@ -40,4 +46,3 @@ while True:
         break
     else:
         print("Invalid option. Please choose a valid option.")
-
