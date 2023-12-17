@@ -1,10 +1,11 @@
+from colored import fg, attr, bg
 from app_functions import create_profile, log_in, calculate_calories, calculate_bmi
 
 file_name = "user_data.csv"
 logged_in_user = None
 logged_in = False
 
-print("\nWelcome to our Calorie and BMI Calculator. Your guide for your daily calorie needs.")
+print(f"{fg('green')}\nWelcome to our Calorie and BMI Calculator. Your guide for your daily calorie needs.")
 
 while True:
     print("\n1. Create Profile")
