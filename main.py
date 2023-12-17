@@ -1,5 +1,6 @@
 from colored import fg, attr, bg
 from app_functions import create_profile, log_in, calculate_calories, calculate_bmi
+from build_executable import build_executable
 
 file_name = "user_data.csv"
 logged_in_user = None
