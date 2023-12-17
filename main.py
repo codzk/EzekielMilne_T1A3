@@ -6,7 +6,7 @@ file_name = "user_data.csv"
 logged_in_user = None
 logged_in = False
 
-print(f"{fg('green')}\nWelcome to our Calorie and BMI Calculator. Your guide for your daily calorie needs.")
+print(f"{fg('green')}{bg('black')}\nWelcome to our Calorie and BMI Calculator. Your guide for your daily calorie needs.")
 
 while True:
     print("\n1. Create Profile")
