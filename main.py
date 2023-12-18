@@ -22,7 +22,7 @@ while True:
             logged_in = True
             while logged_in:
                 print("\nWelcome! How can I help?")
-                print("1. Calculate Calories")
+                print("\n1. Calculate Calories")
                 print("2. Calculate BMI")
                 print("3. Exit")
                 sub_option = input("\nEnter your choice: ")

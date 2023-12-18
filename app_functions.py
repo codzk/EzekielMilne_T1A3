@@ -4,9 +4,9 @@ def get_user_input(prompt):
     return input(prompt)
 
 def create_profile(file_name):
-    print("Create Profile")
+    print("\nCreate Profile")
     try:
-        username = get_user_input("Enter your username: ")
+        username = get_user_input("\nEnter your username: ")
         if not username:
             raise ValueError("Username cannot be empty")
         password = get_user_input("Enter your password: ")
@@ -38,11 +38,11 @@ def login_valid(username, password, user_data):
     return False
 
 def log_in(file_name):
-    print("Log In")
+    print("\nLog In")
     try:
         user_data = load_user_data(file_name)
 
-        username = get_user_input("Enter your username: ")
+        username = get_user_input("\nEnter your username: ")
         password = get_user_input("Enter your password: ")
 
         if login_valid(username, password, user_data):
@@ -57,14 +57,14 @@ def log_in(file_name):
 
 
 def calculate_calories():
-    print("Calculate Calories")
+    print("\nCalculate Calories")
 
-    age = int(get_user_input("Enter your age: "))
+    age = int(get_user_input("\nEnter your age: "))
     weight = float(get_user_input("Enter your weight in kilograms: "))
     height = float(get_user_input("Enter your height in centimeters: "))
     activity_level = get_activity_level()
 
-    gender = get_user_input("Enter your gender (M/F) in upper case: ").upper()
+    gender = get_user_input("\nEnter your gender (M/F) in upper case: ").upper()
 
     if gender == "M":
         bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age)
@@ -97,7 +97,7 @@ def calculate_bmi():
     return get_user_input("\nDo you want to go back to the sub menu? (yes/no): ").lower() == 'yes'
 
 def get_activity_level():
-    print("Select your activity level: ")
+    print("\nSelect your activity level: ")
     print("1. Sedentary (little or no exercise)")
     print("2. Lightly active (light exercise/sports 1-3 days/week)")
     print("3. Moderately active (moderate exercise/sports 3-5 days/week)")
