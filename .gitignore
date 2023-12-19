@@ -1,8 +1,2 @@
-.gitignore
-.venv
 user_data.csv
-build
-dist
-run.sh
-main.spec
-
+.venv
